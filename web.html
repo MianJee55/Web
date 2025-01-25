@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Store</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        header .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        .category {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .category h2 {
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .product h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            color: #28a745;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .description {
+            margin: 0.5rem 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .toggle-desc {
+            background: none;
+            color: #007bff;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+        }
+
+        .product a {
+            text-decoration: none;
+            color: #fff;
+            background: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        .product a:hover {
+            background: #0056b3;
+        }
+
+        .next-page {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .next-page a {
+            text-decoration: none;
+            color: #fff;
+            background: #007bff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .next-page a:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+                margin: 0.5rem 1rem;
+            }
+
+            .logo {
+                flex-direction: column;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            main {
+                padding: 0.5rem;
+            }
+
+            .category {
+                padding: 0.8rem;
+            }
+
+            .category h2 {
+                font-size: 1.5rem;
+            }
+
+            .product {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product img {
+                width: 80px;
+                margin: 0 0 10px;
+            }
+
+            .product h3 {
+                font-size: 1rem;
+            }
+
+            .price {
+                font-size: 0.9rem;
+            }
+
+            .toggle-desc {
+                font-size: 0.8rem;
+            }
+
+            .product a {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .next-page a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .product img {
+                width: 70px;
+            }
+
+            .product h3 {
+                font-size: 0.9rem;
+            }
+
+            .price {
+                font-size: 0.8rem;
+            }
+
+            .product a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Affiliate Store Logo">
+            <h1>Affiliate Store</h1>
+        </div>
+        <p>Discover the best Fast Chargers, Power Banks, and Wireless Earphones!</p>
+    </header>
+    <main>
+        <section id="fast-chargers" class="category">
+            <h2>Fast Charger</h2>
+            <div class="product">
+                <img src="1.jpg" alt="Fast Charger 1">
+                <h3>Fast Charger </h3>
+                <p class="price">Rs 1733 PKR</p>
+                <div class="description">
+                    <p class="short-desc">High-speed charging for all your devices.</p>
+                    <p class="full-desc hidden">This fast charger offers reliable performance with advanced technology for smartphones, tablets, and more.</p>
+                    <button class="toggle-desc">Show More</button>
+                </div>
+                <a href="https://s.daraz.pk/s.ZEPZX?cc target="_blank">Buy Now</a>
+            </div>
+        </section>
+
+        <section id="power-banks" class="category">
+            <h2>Power Bank</h2>
+            <div class="product">
+                <img src="2.jpg" alt="Power Bank 1">
+                <h3>Power Bank </h3>
+                <p class="price">Rs 2450 PKR</p>
+                <div class="description">
+                    <p class="short-desc">Portable and powerful for your needs.</p>
+                    <p class="full-desc hidden">This power bank provides long-lasting battery life with multiple USB outputs.</p>
+                    <button class="toggle-desc">Show More</button>
+                </div>
+                <a href="https://s.daraz.pk/s.ZEP4C?cc target="_blank">Buy Now</a>
+            </div>
+        </section>
+
+        <section id="wireless-earphones" class="category">
+            <h2>Wireless Earphone</h2>
+            <div class="product">
+                <img src="3.jpg" alt="Wireless Earphones 1">
+                <h3>Wireless Earphones </h3>
+                <p class="price">Rs 849 PKR</p>
+                <div class="description">
+                    <p class="short-desc">Crystal-clear sound and long battery life.</p>
+                    <p class="full-desc hidden">Enjoy high-quality audio with these wireless earphones, featuring noise cancellation.</p>
+                    <button class="toggle-desc">Show More</button>
+                </div>
+                <a href="https://s.daraz.pk/s.ZEPgC?cc" target="_blank">Buy Now</a>
+            </div>
+        </section>
+
+        <div class="next-page">
+            <a href="2ndpage.html">Next Page &raquo;</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Affiliate Store. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.toggle-desc').forEach(button => {
+            button.addEventListener('click', () => {
+                const fullDesc = button.previousElementSibling;
+                if (fullDesc.classList.contains('hidden')) {
+                    fullDesc.classList.remove('hidden');
+                    button.textContent = 'Show Less';
+                } else {
+                    fullDesc.classList.add('hidden');
+                    button.textContent = 'Show More';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
